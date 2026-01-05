@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MarketPulse Kingston</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <style>
+      body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #F9F9F9;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      @keyframes scaleIn {
+        from { transform: scale(0.95); opacity: 0.8; }
+        to { transform: scale(1); opacity: 1; }
+      }
+      .animate-fadeIn {
+        animation: fadeIn 0.2s ease-out forwards;
+      }
+      .animate-scaleIn {
+        animation: scaleIn 0.2s ease-out forwards;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "recharts": "https://aistudiocdn.com/recharts@^3.5.1"
+  }
+}
+</script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          'kw-red': '#CE011F',
+          'kw-red-dark': '#B40101', // for hover/active states, from print guide
+          'kw-main-gray': '#828282',
+          'kw-light-gray': '#CCCCCC',
+          'kw-dark-gray': '#4D4D4D',
+          'kw-black': '#000000',
+          'kw-white': '#FFFFFF',
+        },
+        fontFamily: {
+          sans: ['Roboto', 'sans-serif'],
+        },
+      }
+    }
+  }
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
