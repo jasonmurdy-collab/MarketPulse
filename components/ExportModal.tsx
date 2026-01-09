@@ -54,12 +54,21 @@ const ExportModal: React.FC<ExportModalProps> = ({
 
       // 4. Capture with html2canvas
       const canvas = await html2canvas(clone, {
-        scale: 2, // 2x scale for high DPI / Retina quality
-        useCORS: true,
-        backgroundColor: '#ffffff',
-        logging: false,
-        windowWidth: 1200, // Simulate a wider window to prevent mobile layout quirks in capture
-      });
+  scale: 3, // Increased to 3 for very crisp text (High-End feel)
+  useCORS: true,
+  backgroundColor: '#ffffff', 
+  logging: false,
+  windowWidth: 1200, 
+  // Add this to improve text rendering
+  onclone: (clonedDoc) => {
+      const clonedElement = clonedDoc.getElementById('infographic-container');
+      if (clonedElement) {
+          // Force font smoothing for capture
+          clonedElement.style.fontFeatureSettings = '"salt"';
+          clonedElement.style.webkitFontSmoothing = 'antialiased';
+      }
+  }
+});
 
       // 5. Cleanup: Remove the clone
       document.body.removeChild(clone);
